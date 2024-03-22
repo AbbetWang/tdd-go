@@ -1,4 +1,4 @@
-module example.com/hello
+module example.com/tdd-go
 
 go 1.20
 
