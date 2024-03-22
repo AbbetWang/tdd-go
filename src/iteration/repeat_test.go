@@ -1,13 +1,11 @@
 package iteration
 
 import (
-	"strings"
+	"fmt"
 	"testing"
 )
 
 func TestRepeat(t *testing.T) {
-
-	println(strings.Count("cheese", "e"))
 	t.Run("can repeta 'a' expected times", func(t *testing.T) {
 		repeated := Repeat("a", 10)
 		expected := "aaaaaaaaaa"
@@ -22,4 +20,9 @@ func BenchmarkRepeat(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		Repeat("a", 5)
 	}
+}
+func ExampleRepeat() {
+	s := Repeat("a", 6)
+	fmt.Println(s)
+	// Output: aaaaaa
 }
