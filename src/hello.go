@@ -7,7 +7,11 @@ func main() {
 	fmt.Println(x)
 }
 
+const englishHelloPrefix = "Hello, "
+
 func Hello(name string) string {
-	x := "Hello, " + name
-	return x
+	if "" == name {
+		name = "World"
+	}
+	return englishHelloPrefix + name
 }
