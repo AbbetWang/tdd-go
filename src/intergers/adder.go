@@ -1,5 +1,5 @@
 package intergers
 
-func Add(a int, b int) (sum int) {
+func Add(a, b int) (sum int) {
 	return a + b
 }
