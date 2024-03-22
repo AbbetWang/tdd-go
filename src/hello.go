@@ -7,14 +7,21 @@ func main() {
 	fmt.Println(x)
 }
 
+const french = "French"
+const spanish = "Spanish"
 const englishHelloPrefix = "Hello, "
+const spanishHelloPrefix = "Hola, "
+const frechHelloPrefix = "Bonjour, "
 
 func Hello(name string, language string) string {
 	if name == "" {
 		name = "World"
 	}
-	if language == "Spanish" {
-		return "Hola, " + name
+	if language == spanish {
+		return spanishHelloPrefix + name
+	}
+	if language == french {
+		return frechHelloPrefix + name
 	}
 	return englishHelloPrefix + name
 }
