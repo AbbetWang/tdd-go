@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"reflect"
 	"testing"
 )
@@ -25,4 +26,9 @@ func TestSumAll(t *testing.T) {
 	if !reflect.DeepEqual(got, want) {
 		t.Errorf("got %v want %v", got, want)
 	}
+}
+func ExampleSum() {
+	sum := Sum([]int{1, 5, 7, 9})
+	fmt.Println(sum)
+	// Output: 22
 }
