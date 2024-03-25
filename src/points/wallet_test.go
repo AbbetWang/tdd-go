@@ -10,16 +10,14 @@ func TestWallet(t *testing.T) {
 		wallet := Wallet{}
 
 		wallet.Deposit(Bitcoin(10))
-		want := Bitcoin(10)
-		assertBalance(t, wallet, want)
+		assertBalance(t, wallet, Bitcoin(10))
 	})
 
 	t.Run("withdraw", func(t *testing.T) {
 		wallet := Wallet{balance: Bitcoin(20)}
 
 		wallet.Withdraw(Bitcoin(10))
-		want := Bitcoin(10)
-		assertBalance(t, wallet, want)
+		assertBalance(t, wallet, Bitcoin(10))
 	})
 	t.Run("withdraw insufficient funds", func(t *testing.T) {
 		startingBalance := Bitcoin(20)
