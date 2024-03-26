@@ -1,5 +1,5 @@
 package main
 
-func Search(map[string]string, string) string {
-	return "this is just a test"
+func Search(dictionary map[string]string, key string) string {
+	return dictionary[key]
 }
