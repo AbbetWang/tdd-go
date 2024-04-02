@@ -40,14 +40,6 @@ func (s *SpyStore) Fetch(ctx context.Context) (string, error) {
 
 }
 
-func (s *SpyStore) assertWasCancelled() {
-	s.t.Helper()
-}
-func (s *SpyStore) assertWasNotCancelled() {
-	s.t.Helper()
-
-}
-
 type SpyResponseWriter struct {
 	written bool
 }
