@@ -8,15 +8,6 @@ import (
 	"time"
 )
 
-type StubStore struct {
-	response string
-}
-
-func (s *StubStore) Fetch() string {
-	return s.response
-}
-func (s *StubStore) Cancel() {}
-
 type SpyStore struct {
 	response  string
 	cancelled bool
