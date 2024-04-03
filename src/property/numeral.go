@@ -1,5 +1,5 @@
 package property
 
-func ConvertToRoman(number int) string {
+func ConvertToRoman(arabic int) string {
 	return "I"
 }
