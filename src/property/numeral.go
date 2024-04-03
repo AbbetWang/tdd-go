@@ -1,12 +1,14 @@
 package property
 
+import "strings"
+
 func ConvertToRoman(arabic int) string {
 
-	result := ""
+	var result strings.Builder
 	for i := 0; i < arabic; i++ {
-		result += "I"
+		result.WriteString("I")
 	}
 
-	return result
+	return result.String()
 
 }
