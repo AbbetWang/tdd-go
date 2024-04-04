@@ -10,7 +10,7 @@ type Point struct {
 	Y float64
 }
 
-func SecondHand(time time.Time) Point {
+func SecondHand(t time.Time) Point {
 
 	return Point{X: 150, Y: 150 - 90}
 }
