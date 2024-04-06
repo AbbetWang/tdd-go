@@ -1,7 +1,6 @@
 package clockface
 
 import (
-	"bytes"
 	"fmt"
 	"io"
 	"math"
@@ -37,7 +36,7 @@ func secondHandPoint(t time.Time) Point {
 	y := math.Cos(angle)
 	return Point{x, y}
 }
-func SVGWriter(w *bytes.Buffer, t time.Time) {
+func SVGWriter(w io.Writer, t time.Time) {
 	io.WriteString(w, svgStart)
 	io.WriteString(w, bezel)
 	secondHand(w, t)
