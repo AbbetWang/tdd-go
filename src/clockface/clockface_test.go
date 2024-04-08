@@ -30,6 +30,7 @@ func TestMinuteHandPoint(t *testing.T) {
 		point Point
 	}{
 		{simpleTime(0, 30, 0), Point{0, -1}},
+		{simpleTime(0, 45, 0), Point{-1, 0}},
 	}
 
 	for _, c := range cases {
