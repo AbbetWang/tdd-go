@@ -47,5 +47,6 @@ func minuteHandPoint(t time.Time) Point {
 	return angleToPoint(minutesInRadians((t)))
 }
 func hoursInRadians(t time.Time) float64 {
-	return math.Pi
+	return (minutesInRadians(t) / 12) +
+		(math.Pi / (6 / float64(t.Hour()%12)))
 }
