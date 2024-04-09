@@ -42,7 +42,7 @@ func angleToPoint(angle float64) Point {
 	return Point{x, y}
 }
 func minutesInRadians(t time.Time) float64 {
-	return (secondsInRadians(t) / 60) +
+	return (secondsInRadians(t) / minutesInClock) +
 		(math.Pi / (minutesInHalfClock / float64(t.Minute())))
 }
 
