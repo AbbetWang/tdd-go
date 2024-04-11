@@ -1,0 +1,5 @@
+package blogposts
+
+func NewPostsFromFS() {
+
+}
