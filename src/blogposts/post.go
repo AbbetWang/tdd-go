@@ -27,7 +27,7 @@ func newPost(postFile io.Reader) (Post, error) {
 
 	title := readMetaLine(titleSeparator)
 	description := readMetaLine(descriptionSeparator)
-	tags := getTags(readMetaLine)
+	tags := trimSpace(strings.Split(readMetaLine(tagsSeparator), ","))
 	return Post{
 		Title:       title,
 		Description: description,
@@ -35,11 +35,9 @@ func newPost(postFile io.Reader) (Post, error) {
 	}, nil
 }
 
-func getTags(readMetaLine func(tagName string) string) []string {
-	tags := strings.Split(readMetaLine(tagsSeparator), ",")
+func trimSpace(tags []string) []string {
 	for i, tag := range tags {
 		tags[i] = strings.TrimSpace(tag)
-
 	}
 	return tags
 }
