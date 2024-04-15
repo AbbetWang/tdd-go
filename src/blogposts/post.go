@@ -27,7 +27,7 @@ func newPost(postFile io.Reader) (Post, error) {
 
 	title := readMetaLine(titleSeparator)
 	description := readMetaLine(descriptionSeparator)
-	tags := trimSpace(strings.Split(readMetaLine(tagsSeparator), ","))
+	tags := strings.Split(readMetaLine(tagsSeparator), ", ")
 	return Post{
 		Title:       title,
 		Description: description,
