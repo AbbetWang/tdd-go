@@ -5,8 +5,7 @@ import (
 )
 
 type Post struct {
-	Title, Description, Body string
-	Tags                     []string
+	Title string
 }
 
 func NewPostsFromFS(fileSystem fs.FS) ([]Post, error) {
