@@ -8,11 +8,13 @@ import (
 
 type Post struct {
 	Title, Description string
+	Tags               []string
 }
 
 const (
 	titleSeparator       = "Title: "
 	descriptionSeparator = "Description: "
+	tagsSeparator        = "Tags: "
 )
 
 func newPost(postFile io.Reader) (Post, error) {
@@ -25,5 +27,14 @@ func newPost(postFile io.Reader) (Post, error) {
 
 	title := readMetaLine(titleSeparator)
 	description := readMetaLine(descriptionSeparator)
-	return Post{Title: title, Description: description}, nil
+	tags := strings.Split(readMetaLine(tagsSeparator), ",")
+	for i, tag := range tags {
+		tags[i] = strings.TrimSpace(tag)
+
+	}
+	return Post{
+		Title:       title,
+		Description: description,
+		Tags:        tags,
+	}, nil
 }
