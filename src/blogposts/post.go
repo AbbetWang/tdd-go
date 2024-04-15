@@ -34,10 +34,3 @@ func newPost(postFile io.Reader) (Post, error) {
 		Tags:        tags,
 	}, nil
 }
-
-func trimSpace(tags []string) []string {
-	for i, tag := range tags {
-		tags[i] = strings.TrimSpace(tag)
-	}
-	return tags
-}
